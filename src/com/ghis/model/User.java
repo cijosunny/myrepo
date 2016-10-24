@@ -1,4 +1,4 @@
-package com.cs.rest;
+package com.ghis.model;
 
 public class User {
 	private String userID;

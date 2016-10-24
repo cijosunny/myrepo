@@ -1,5 +1,6 @@
-package com.cs.rest;
+package com.ghis.util;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Properties;
 
 import javax.mail.Message;
@@ -10,13 +11,10 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import com.ghis.model.AppUser;
 
 public class SendEmail {
-	public static void sendEmail() {
-
-		 String to="cijosunny@gmail.com";//change accordingly
+	public static int sendEmail(String toEmail, String subject, String body) {
 
 		//Get the session object
 		  Properties props = new Properties();
@@ -37,24 +35,24 @@ public class SendEmail {
 		//compose message
 		  try {
 		   MimeMessage message = new MimeMessage(session);
-		   message.setFrom(new InternetAddress("testemail4hackathon@gmail.com"));//change accordingly
-		   message.addRecipient(Message.RecipientType.TO,new InternetAddress(to));
-		   message.setSubject("Hello");
-		   message.setText("Testing.......");
+		   message.setFrom(new InternetAddress("testemail4hackathon@gmail.com","careers@walmart.com"));//change accordingly
+		   message.addRecipients(Message.RecipientType.TO,InternetAddress.parse(toEmail));
+		   message.setSubject(subject);
+		   message.setText(body);
 		   
 		   //send message
 		   Transport.send(message);
 
 		   System.out.println("message sent successfully");
+		   
+		   return 1;
 		 
-		  } catch (MessagingException e) {throw new RuntimeException(e);}
+		  } catch (MessagingException | UnsupportedEncodingException e) {return -1;} 
 		 
 		 }
 	
 	public static void main(String[] args) {
-		SessionFactory sessionFactory = new Configuration().configure()
-				.buildSessionFactory();
-		org.hibernate.Session session1 = sessionFactory.openSession();
+		org.hibernate.Session session1 = HibernateUtil.getSessionFactory().openSession();
 		session1.beginTransaction();
  
 		AppUser user = new AppUser("firstuser");

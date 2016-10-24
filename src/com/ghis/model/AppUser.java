@@ -1,4 +1,4 @@
-package com.cs.rest;
+package com.ghis.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
