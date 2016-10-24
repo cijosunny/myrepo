@@ -13,6 +13,7 @@ public class AppService {
 	@GET
 	@Path("/version")
 	public String showVersion(){
+		SendEmail.sendEmail();
 		return "Method: GET \nJersey Version:2.23.2";
 	}
 	
