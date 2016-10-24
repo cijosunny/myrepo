@@ -11,7 +11,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import com.ghis.model.User;
-import com.ghis.util.SendEmail;
+import com.ghis.util.EmailUtil;
 
 @Path("/rest")
 public class GetHiredRestService {
@@ -21,7 +21,7 @@ public class GetHiredRestService {
 	public HashMap<String, String> sendEmail(@QueryParam("toEmail") String toEmail,
 			@QueryParam("subject") String subject,
 			@QueryParam("body") String body){
-		int flag = SendEmail.sendEmail(toEmail, subject, body);
+		int flag = EmailUtil.sendEmail(toEmail, subject, body);
 		HashMap<String, String> result = new HashMap<>();
 		if(flag>0){
 			result.put("status", "success");

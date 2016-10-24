@@ -13,7 +13,7 @@ import javax.mail.internet.MimeMessage;
 
 import com.ghis.model.AppUser;
 
-public class SendEmail {
+public class EmailUtil {
 	public static int sendEmail(String toEmail, String subject, String body) {
 
 		//Get the session object
