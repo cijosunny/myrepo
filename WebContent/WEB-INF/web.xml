@@ -22,4 +22,7 @@
     <servlet-name>jersey-serlvet</servlet-name>
     <url-pattern>/service/*</url-pattern>
   </servlet-mapping>
+  <listener>
+  	<listener-class>com.ghis.listener.AppContextListener</listener-class>
+  </listener>
 </web-app>
