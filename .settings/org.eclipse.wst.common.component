@@ -3,7 +3,8 @@
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="rest-app-jersey2.23.2"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/resources"/>
         <property name="java-output-path" value="/rest-app-jersey2.23.2/build/classes"/>
+        <property name="context-root" value="get-hired-in-seconds"/>
     </wb-module>
 </project-modules>

@@ -10,6 +10,9 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
 public class SendEmail {
 	public static void sendEmail() {
 
@@ -47,4 +50,17 @@ public class SendEmail {
 		  } catch (MessagingException e) {throw new RuntimeException(e);}
 		 
 		 }
+	
+	public static void main(String[] args) {
+		SessionFactory sessionFactory = new Configuration().configure()
+				.buildSessionFactory();
+		org.hibernate.Session session1 = sessionFactory.openSession();
+		session1.beginTransaction();
+ 
+		AppUser user = new AppUser("firstuser");
+		session1.save(user);
+ 
+		session1.getTransaction().commit();
+		session1.close();
+	}
 }
