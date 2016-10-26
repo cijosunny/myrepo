@@ -29,6 +29,7 @@
 		<!-- Annotated entity classes -->
 		<!-- <mapping class="com.ghis.model.AppUser" /> -->
 		<mapping class="com.ghis.model.JobModel" />
+		<mapping class="com.ghis.model.JobApplicationModel" />
 
 	</session-factory>
 </hibernate-configuration>

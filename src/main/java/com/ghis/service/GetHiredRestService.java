@@ -1,8 +1,6 @@
 package com.ghis.service;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -10,7 +8,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
-import com.ghis.model.User;
 import com.ghis.util.EmailUtil;
 
 @Path("/rest")
@@ -35,20 +32,4 @@ public class GetHiredRestService {
 	}
 	
 	
-	@GET
-	@Path("/versioninjson")
-	@Produces(MediaType.APPLICATION_JSON)
-	public List<String> showVersions(){
-		List<String> versions = new ArrayList<>();
-		versions.add("GET");
-		versions.add("v2.23.2");
-		
-		
-		
-		
-		User user = new User();
-		user.setUserID("U45310");
-		user.setName("CIJO");
-		return versions;
-	}
 }

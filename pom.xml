@@ -9,6 +9,10 @@
 		<jersey2.version>2.23.2</jersey2.version>
 		<jaxrs.version>2.0.1</jaxrs.version>
 		<hibernate.version>4.2.15.Final</hibernate.version>
+		<postgres.version>9.3-1102-jdbc41</postgres.version>
+		<activation.version>1.1.1</activation.version>
+		<mail.version>1.4.3</mail.version>
+		<servlet.version>2.5</servlet.version>
 	</properties>
 	<dependencies>
 		<!-- JAX-RS -->
@@ -41,13 +45,13 @@
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
-			<version>1.4.3</version>
+			<version>${mail.version}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/javax.activation/activation -->
 		<dependency>
 			<groupId>javax.activation</groupId>
 			<artifactId>activation</artifactId>
-			<version>1.1.1</version>
+			<version>${activation.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -59,14 +63,14 @@
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-			<version>9.3-1102-jdbc41</version>
+			<version>${postgres.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
+			<version>${servlet.version}</version>
 		</dependency>
 
 
